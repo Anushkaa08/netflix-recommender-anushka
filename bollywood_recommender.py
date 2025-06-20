@@ -8,6 +8,8 @@ import requests
 
 # Load datasets
 main_df = pd.read_csv("movies.csv")  
+main_df['overview'] = "Netflix movie — overview not available."
+
 bollywood_df = pd.read_csv("bollywood_2024_25.csv")  
 bollywood_df['overview'] = "Bollywood movie — overview not available."
 
