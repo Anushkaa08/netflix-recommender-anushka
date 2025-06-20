@@ -7,8 +7,10 @@ import streamlit as st
 import requests
 
 # Load datasets
-main_df = pd.read_csv("movies.csv")  # Your original dataset
-bollywood_df = pd.read_csv("bollywood_2024_25.csv")  # The one we just made
+main_df = pd.read_csv("movies.csv")  
+bollywood_df = pd.read_csv("bollywood_2024_25.csv")  
+bollywood_df['overview'] = "Bollywood movie — overview not available."
+
 
 # Combine them
 combined_df = pd.concat([main_df[['title', 'overview']], bollywood_df[['title', 'overview']]], ignore_index=True)
